@@ -1,6 +1,9 @@
 images {
 	image, "lemmling.png" COMP;
 	image, "batt_01.png" COMP;
+	image, "batt_02.png" COMP;
+	image, "batt_03.png" COMP;
+	image, "batt_04.png" COMP;
 	image, "batt_05.png" COMP;
 	image, "alarm1.png" COMP;
 }
@@ -113,6 +116,27 @@ collections {
 					}
 				}
 				description {
+					state, "1/4" 0.0;
+					inherit, "default" 0.0;
+					image {
+						normal, "batt_02.png";
+					}
+				}
+				description {
+					state, "2/4" 0.0;
+					inherit, "default" 0.0;
+					image {
+						normal, "batt_03.png";
+					}
+				}
+				description {
+					state, "3/4" 0.0;
+					inherit, "default" 0.0;
+					image {
+						normal, "batt_04.png";
+					}
+				}
+				description {
 					state, "full" 0.0;
 					inherit, "default" 0.0;
 					image {
@@ -174,6 +198,27 @@ collections {
 				signal, "set_batt_full";
 				script {
 					set_state(PART:"elock/battery", "full", 0.0);
+				}
+			}
+			program {
+				name, "set_batt_1/4";
+				signal, "set_batt_1/4";
+				script {
+					set_state(PART:"elock/battery", "1/4", 0.0);
+				}
+			}
+			program {
+				name, "set_batt_2/4";
+				signal, "set_batt_2/4";
+				script {
+					set_state(PART:"elock/battery", "2/4", 0.0);
+				}
+			}
+			program {
+				name, "set_batt_3/4";
+				signal, "set_batt_3/4";
+				script {
+					set_state(PART:"elock/battery", "3/4", 0.0);
 				}
 			}
 			program {
