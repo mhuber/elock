@@ -23,3 +23,5 @@ elock
 elock.edj
 .gitignore
 tags
+po/*.mo
+
